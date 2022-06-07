@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { User } from './models/user';
+import { AccountService } from './services/account.service';
 
 @Component({
   selector: 'app-root',
@@ -8,22 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'Welcome to social app';
-  users: any;
 
-  constructor(private _httpClient: HttpClient) {
+  constructor(private _accountService: AccountService) {
   }
 
   ngOnInit()
   {
-    this.getUsers();
+    this.setCurrentUser();
   }
 
-  getUsers()
-  {
-    this._httpClient.get('https://localhost:7255/api/users').subscribe({
-      next: response => this.users = response,
-      error: error => console.log("I got the error from api", error)
-    });
+  setCurrentUser() {
+    const user: User = JSON.parse(localStorage.getItem('user'));
+    this._accountService.setCurrentUser(user);
   }
+
+
 
 }
