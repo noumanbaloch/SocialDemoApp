@@ -28,11 +28,6 @@ export class NavComponent implements OnInit {
         this._router.navigateByUrl('/members');
         console.log(response)
       },
-      error: error =>
-      {
-        console.log(error)
-        this._toastService.error(error.error);
-      }
     });
 
   }
