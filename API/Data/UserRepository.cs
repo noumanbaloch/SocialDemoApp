@@ -26,7 +26,7 @@ namespace API.Data
             return await _context.Users.Include(p => p.Photos).SingleOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<UserEntity> GetUserByNameAsync(string username)
+        public async Task<UserEntity> GetUserByUsernameAsync(string username)
         {
             return await _context.Users.Include(p => p.Photos).
                 SingleOrDefaultAsync(x => x.UserName == username);

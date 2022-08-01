@@ -25,6 +25,7 @@ import { JwtInterceptor } from './components/interceptors/jwt.interceptor';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './components/interceptors/loading.interceptor';
+import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { LoadingInterceptor } from './components/interceptors/loading.intercepto
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
